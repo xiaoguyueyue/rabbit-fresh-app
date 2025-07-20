@@ -19,3 +19,14 @@ export type HotCategoryItem = {
   title: string
   type: string
 }
+
+export type GuessLikeItem = {
+  id: string
+  name: string
+  desc: string
+  price: number
+  /** 商品主图 */
+  picture: string
+  discount: number
+  orderNum: number
+}

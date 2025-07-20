@@ -1,11 +1,14 @@
 <script setup lang="ts">
 import CustomNavbar from './components/CustomNavbar.vue'
 import { getHomeBannerAPI, getHomeCategoryMutliAPI, getHomeHotMutliAPI } from '@/services/home'
-import type { BannerItem, CategoryItem, HotCategoryItem } from '@/types/home'
+import type { BannerItem, CategoryItem, HotCategoryItem } from '@/types/home.d.ts'
 import { onLoad } from '@dcloudio/uni-app'
 import { ref } from 'vue'
 import CategoryPanel from './components/CategoryPanel.vue'
 import HotPanek from './components/HotPanek.vue'
+import XtxGuest from '@/components/XtxGuest.vue'
+import type { XtxGuessInstance } from '@/types/component'
+import PageSkeleton from './components/PageSkeleton.vue'
 
 const bannerItemList = ref<BannerItem[]>([])
 const getHomeBannerData = async () => {
@@ -25,22 +28,70 @@ const getHomeHotMutliData = async () => {
   hotItemList.value = res.result
 }
 
+const isLoading = ref(true)
+
+// 页面加载
 onLoad(() => {
-  getHomeBannerData()
-  getHomeCategoryMutliData()
-  getHomeHotMutliData()
+  isLoading.value = true
+  Promise.all([getHomeBannerData(), getHomeCategoryMutliData(), getHomeHotMutliData()])
+  isLoading.value = false
 })
+
+const guessRef = ref<XtxGuessInstance>()
+const onScrolltolower = () => {
+  guessRef.value?.getMore()
+}
+const isTriggered = ref(false)
+const onRefresherrefresh = async () => {
+  isLoading.value = true
+  isTriggered.value = true
+  // await getHomeBannerData()
+  // await getHomeCategoryMutliData()
+  // await getHomeHotMutliData()
+  guessRef.value?.resetData()
+  await Promise.all([
+    getHomeBannerData(),
+    getHomeCategoryMutliData(),
+    getHomeHotMutliData(),
+    guessRef.value?.getMore(),
+  ])
+  uni.showToast({
+    title: '刷新成功',
+    icon: 'none',
+  })
+  isTriggered.value = false
+  isLoading.value = false
+}
 </script>
 
 <template>
   <CustomNavbar />
-  <XtxSwiper :list="bannerItemList" />
-  <CategoryPanel :list="categoryItemList" />
-  <HotPanek :list="hotItemList" />
+  <scroll-view
+    refresher-enabled
+    :refresher-triggered="isTriggered"
+    @refresherrefresh="onRefresherrefresh"
+    @scrolltolower="onScrolltolower"
+    class="scroll-view"
+    scroll-y
+  >
+    <PageSkeleton v-if="isLoading" />
+    <template v-else>
+      <XtxSwiper :list="bannerItemList" />
+      <CategoryPanel :list="categoryItemList" />
+      <HotPanek :list="hotItemList" />
+      <XtxGuest ref="guessRef" />
+    </template>
+  </scroll-view>
 </template>
 
 <style lang="scss">
 page {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
   background-color: #f7f7f7;
+}
+.scroll-view {
+  flex: 1;
 }
 </style>

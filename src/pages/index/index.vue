@@ -5,7 +5,7 @@ import type { BannerItem, CategoryItem, HotCategoryItem } from '@/types/home.d.t
 import { onLoad } from '@dcloudio/uni-app'
 import { ref } from 'vue'
 import CategoryPanel from './components/CategoryPanel.vue'
-import HotPanek from './components/HotPanek.vue'
+import HotPanel from './components/HotPanel.vue'
 import XtxGuest from '@/components/XtxGuest.vue'
 import type { XtxGuessInstance } from '@/types/component'
 import PageSkeleton from './components/PageSkeleton.vue'
@@ -78,7 +78,7 @@ const onRefresherrefresh = async () => {
     <template v-else>
       <XtxSwiper :list="bannerItemList" />
       <CategoryPanel :list="categoryItemList" />
-      <HotPanek :list="hotItemList" />
+      <HotPanel :list="hotItemList" />
       <XtxGuest ref="guessRef" />
     </template>
   </scroll-view>

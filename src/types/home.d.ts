@@ -1,3 +1,5 @@
+import type { GoodsItem } from "./global"
+
 export type BannerItem = {
   id: string
   imgUrl: string
@@ -20,13 +22,4 @@ export type HotCategoryItem = {
   type: string
 }
 
-export type GuessLikeItem = {
-  id: string
-  name: string
-  desc: string
-  price: number
-  /** 商品主图 */
-  picture: string
-  discount: number
-  orderNum: number
-}
+export type GuessLikeItem = GoodsItem

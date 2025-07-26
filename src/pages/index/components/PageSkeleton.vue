@@ -89,62 +89,62 @@
         </navigator>
       </view>
     </view>
-    <view is="pages/index/components/HotPanek">
-      <view class="panel HotPanek--panel hot HotPanek--hot">
-        <view class="item HotPanek--item">
-          <view class="title HotPanek--title">
-            <text class="title-text HotPanek--title-text sk-transparent sk-text-14-2857-422 sk-text"
+    <view is="pages/index/components/HotPanel">
+      <view class="panel HotPanel--panel hot HotPanel--hot">
+        <view class="item HotPanel--item">
+          <view class="title HotPanel--title">
+            <text class="title-text HotPanel--title-text sk-transparent sk-text-14-2857-422 sk-text"
               >特惠推荐</text
             >
-            <text class="title-desc HotPanek--title-desc sk-transparent sk-text-14-2857-857 sk-text"
+            <text class="title-desc HotPanel--title-desc sk-transparent sk-text-14-2857-857 sk-text"
               >精选全攻略</text
             >
           </view>
-          <navigator class="cards HotPanek--cards" hover-class="none">
-            <image class="image HotPanek--image sk-image" mode="aspectFit"></image>
-            <image class="image HotPanek--image sk-image" mode="aspectFit"></image>
+          <navigator class="cards HotPanel--cards" hover-class="none">
+            <image class="image HotPanel--image sk-image" mode="aspectFit"></image>
+            <image class="image HotPanel--image sk-image" mode="aspectFit"></image>
           </navigator>
         </view>
-        <view class="item HotPanek--item">
-          <view class="title HotPanek--title">
-            <text class="title-text HotPanek--title-text sk-transparent sk-text-14-2857-7 sk-text"
+        <view class="item HotPanel--item">
+          <view class="title HotPanel--title">
+            <text class="title-text HotPanel--title-text sk-transparent sk-text-14-2857-7 sk-text"
               >爆款推荐</text
             >
-            <text class="title-desc HotPanek--title-desc sk-transparent sk-text-14-2857-598 sk-text"
+            <text class="title-desc HotPanel--title-desc sk-transparent sk-text-14-2857-598 sk-text"
               >最受欢迎</text
             >
           </view>
-          <navigator class="cards HotPanek--cards" hover-class="none">
-            <image class="image HotPanek--image sk-image" mode="aspectFit"></image>
-            <image class="image HotPanek--image sk-image" mode="aspectFit"></image>
+          <navigator class="cards HotPanel--cards" hover-class="none">
+            <image class="image HotPanel--image sk-image" mode="aspectFit"></image>
+            <image class="image HotPanel--image sk-image" mode="aspectFit"></image>
           </navigator>
         </view>
-        <view class="item HotPanek--item">
-          <view class="title HotPanek--title">
-            <text class="title-text HotPanek--title-text sk-transparent sk-text-14-2857-664 sk-text"
+        <view class="item HotPanel--item">
+          <view class="title HotPanel--title">
+            <text class="title-text HotPanel--title-text sk-transparent sk-text-14-2857-664 sk-text"
               >一站买全</text
             >
-            <text class="title-desc HotPanek--title-desc sk-transparent sk-text-14-2857-974 sk-text"
+            <text class="title-desc HotPanel--title-desc sk-transparent sk-text-14-2857-974 sk-text"
               >精心优选</text
             >
           </view>
-          <navigator class="cards HotPanek--cards" hover-class="none">
-            <image class="image HotPanek--image sk-image" mode="aspectFit"></image>
-            <image class="image HotPanek--image sk-image" mode="aspectFit"></image>
+          <navigator class="cards HotPanel--cards" hover-class="none">
+            <image class="image HotPanel--image sk-image" mode="aspectFit"></image>
+            <image class="image HotPanel--image sk-image" mode="aspectFit"></image>
           </navigator>
         </view>
-        <view class="item HotPanek--item">
-          <view class="title HotPanek--title">
-            <text class="title-text HotPanek--title-text sk-transparent sk-text-14-2857-838 sk-text"
+        <view class="item HotPanel--item">
+          <view class="title HotPanel--title">
+            <text class="title-text HotPanel--title-text sk-transparent sk-text-14-2857-838 sk-text"
               >新鲜好物</text
             >
-            <text class="title-desc HotPanek--title-desc sk-transparent sk-text-14-2857-819 sk-text"
+            <text class="title-desc HotPanel--title-desc sk-transparent sk-text-14-2857-819 sk-text"
               >生活加分项</text
             >
           </view>
-          <navigator class="cards HotPanek--cards" hover-class="none">
-            <image class="image HotPanek--image sk-image" mode="aspectFit"></image>
-            <image class="image HotPanek--image sk-image" mode="aspectFit"></image>
+          <navigator class="cards HotPanel--cards" hover-class="none">
+            <image class="image HotPanel--image sk-image" mode="aspectFit"></image>
+            <image class="image HotPanel--image sk-image" mode="aspectFit"></image>
           </navigator>
         </view>
       </view>

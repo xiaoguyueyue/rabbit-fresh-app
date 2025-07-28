@@ -6,9 +6,9 @@ import { onLoad } from '@dcloudio/uni-app'
 import { ref } from 'vue'
 import CategoryPanel from './components/CategoryPanel.vue'
 import HotPanel from './components/HotPanel.vue'
-import XtxGuest from '@/components/XtxGuest.vue'
-import type { XtxGuessInstance } from '@/types/component'
+import XtxGuess from '@/components/XtxGuess.vue'
 import PageSkeleton from './components/PageSkeleton.vue'
+import { useGuessList } from '@/composables'
 
 const bannerItemList = ref<BannerItem[]>([])
 const getHomeBannerData = async () => {
@@ -37,10 +37,8 @@ onLoad(() => {
   isLoading.value = false
 })
 
-const guessRef = ref<XtxGuessInstance>()
-const onScrolltolower = () => {
-  guessRef.value?.getMore()
-}
+const { guessRef, onScrolltolower } = useGuessList()
+
 const isTriggered = ref(false)
 const onRefresherrefresh = async () => {
   isLoading.value = true
@@ -79,7 +77,7 @@ const onRefresherrefresh = async () => {
       <XtxSwiper :list="bannerItemList" />
       <CategoryPanel :list="categoryItemList" />
       <HotPanel :list="hotItemList" />
-      <XtxGuest ref="guessRef" />
+      <XtxGuess ref="guessRef" />
     </template>
   </scroll-view>
 </template>

@@ -149,10 +149,10 @@
         </view>
       </view>
     </view>
-    <view is="components/XtxGuest" class="r r">
-      <view class="caption XtxGuest--caption">
+    <view is="components/XtxGuess" class="r r">
+      <view class="caption XtxGuess--caption">
         <text
-          class="text XtxGuest--text sk-transparent sk-text-0-0000-511 sk-text sk-pseudo sk-pseudo-circle"
+          class="text XtxGuess--text sk-transparent sk-text-0-0000-511 sk-text sk-pseudo sk-pseudo-circle"
           >猜你喜欢</text
         >
       </view>

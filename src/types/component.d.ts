@@ -3,7 +3,7 @@
  *   现调整为
  * declare module 'vue'
  */
-import type XtxGuest from '@/components/XtxGuest.vue'
+import type XtxGuess from '@/components/XtxGuest.vue'
 import 'vue'
 declare module 'vue' {
   export interface GlobalComponents {
@@ -11,4 +11,4 @@ declare module 'vue' {
   }
 }
 
-export type XtxGuessInstance = InstanceType<typeof XtxGuest>
+export type XtxGuessInstance = InstanceType<typeof XtxGuess>

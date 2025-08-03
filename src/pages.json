@@ -1,6 +1,7 @@
 {
 	// 组件自动引入规则
 	"easycom": {
+		// 当 autoscan 为 true 时，uni-app 会自动扫描 node_modules 和 components 目录下的所有组件（包括三方组件），并自动注册为 easycom 组件
 		"autoscan": true,
 		"custom": {
 			// uni-ui 规则如下配置
@@ -116,6 +117,18 @@
 						"navigationStyle": "custom",
 						"navigationBarTextStyle": "white",
 						"navigationBarTitleText": "个人信息"
+					}
+				},
+				{
+					"path": "address/address",
+					"style": {
+						"navigationBarTitleText": "地址管理"
+					}
+				},
+				{
+					"path": "address-form/address-form",
+					"style": {
+						"navigationBarTitleText": ""
 					}
 				}
 			]

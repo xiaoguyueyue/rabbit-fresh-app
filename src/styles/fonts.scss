@@ -145,3 +145,9 @@
 .icon-home:before {
   content: '\e8b9';
 }
+
+button,navigator {
+  &:active {
+    transform: scale(0.95);
+  }
+}

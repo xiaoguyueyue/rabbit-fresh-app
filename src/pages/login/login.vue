@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { postLoginWxMinAPI, postLoginWxMinSimpleAPI } from '@/services/login';
-import { onLoad } from '@dcloudio/uni-app';
+import { postLoginWxMinAPI, postLoginWxMinSimpleAPI } from '@/services/login'
+import { onLoad } from '@dcloudio/uni-app'
 import { ref } from 'vue'
 import { useMemberStore } from '@/stores/modules/member'
 
@@ -30,8 +30,8 @@ const postLoginWxMinSimple = async () => {
   const res = await postLoginWxMinSimpleAPI(phoneNumber.value)
   const memberStore = useMemberStore()
   memberStore.setProfile(res.result)
-  uni.switchTab({ url: '/pages/my/my' })
   uni.showToast({ icon: 'success', title: '登录成功' })
+  uni.navigateBack()
 }
 </script>
 
